@@ -1,0 +1,28 @@
+syntax = "proto3";
+package proto;
+
+option go_package = "./proto/compiled";
+
+import "google/protobuf/timestamp.proto";
+
+message Product {
+    int64 id = 1;
+    string name = 2;
+    int32 stock = 3;
+    int64 price = 4;
+    google.protobuf.Timestamp created_at = 5;
+    google.protobuf.Timestamp updated_at = 6;
+    google.protobuf.Timestamp deleted_at = 7;
+}
+
+message ProductIds {
+    repeated int64 ids = 1;
+}
+
+message Products {
+    repeated Product products = 1;
+}
+
+service ProductService {
+    rpc GetProducts(ProductIds) returns (Products) {}
+}

@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql
+    container_name: gcommerce-db
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: Jhis837NS_x
+    ports:
+      - "3306:3306"
